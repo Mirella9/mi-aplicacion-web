@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    display: flex;
+    background-color: aquamarine;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.contenedor{
+    justify-content: space-around;
+    display: flex;
+    padding: 20px;
+}
+
+.tarjeta{
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    height: 400px;
+    width: 300px;
+    transition: transform 0.3s ease-in-out, background-color 0.5s ease;
+   background-position: center;
+   background-size: cover;
+    box-shadow: 0 4px 12px rgb(231, 202, 202, 0.1);
+}
+
+.tarjeta::before{
+  top: 0;
+  transform-origin: left;
+  transition: transform 0.5s ease;
+  height: 100%;
+  content: "";
+  width: 100%;
+  position: absolute;
+  left: 0;
+  z-index: 1;
+}
+
+.tarjeta:hover{
+    transform: scale(1.05);
+}
+
+.tarjeta::before{
+    transform: scaleX(1);
+}
+
+.img{
+   height: 100%;
+   overflow: hidden;
+   width: 100%;
+   
+}
+
+
+
+.img .img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cuerpo{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    padding: 26px;
+    text-align: center;
+    transition: opacity 0.3s ease-in-out;
+    background-color: rgb(0, 0, 0, 0.6);
+
+}
+
+.tarjeta:hover .cuerpo{
+    opacity: 1;
+}
+
+.tarjeta:hover .img2{
+    opacity: 0.3s;
+}
+
+.texto h3{
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.texto p{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+
+.tarjeta:hover{
+    color: rgb(238, 238, 224);
+}
+
+.tarjeta:hover .texto p{
+    color: white;
+}
